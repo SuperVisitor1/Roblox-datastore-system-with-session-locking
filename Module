@@ -90,7 +90,7 @@ local function SaveJobIdAndTime(self, DataKey)
         end)
 
         if not ok then
-            warn("SaveJobIdAndTime UpdateAsync faile")
+            warn("SaveJobIdAndTime UpdateAsync failed")
         else
             local okGet, currentData = pcall(function()
                 return DataStore:GetAsync(DataKey)
