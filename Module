@@ -116,7 +116,7 @@ local function SaveJobIdAndTime(self, DataKey)
     end
 
     warn(
-        "Failed to claim lock after multiple attempts for key:", 
+        "Lock not claimed", 
         DataKey
     )
 
@@ -184,13 +184,13 @@ function DataHandler:Save(DataKey)
             else
                 local dataString = tostring(currentData)
                 warn(
-                    "GetAsync verification failed:", 
+                    "GetAsync verification failed", 
                     dataString
                 )
                 return true
             end
         else
-            warn(string.format("Save UpdateAsync failed"))
+            warn("Save UpdateAsync failed")
         end
 
         task.wait(backoff)
