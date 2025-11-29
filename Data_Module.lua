@@ -219,7 +219,7 @@ function DataHandler:Load(Player, DataKey)
 	if not success then
 		local errorString = tostring(err)
 		warn(
-			"Failed to load data:", 
+			"Failed to load data", 
 			errorString
 		)
 
